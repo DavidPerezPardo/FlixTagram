@@ -29,7 +29,7 @@ La opción 'publicar' nos permite añadir una publicación,tal y como se muestra
 Podremos,una vez dentro,editar nuestra publicación o borrarla.
 Y así veríamos una publicación,accediendo a ella clickando en la foto:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/8.png" title="Publicación"><br><br>
-Podremos comentarla,editar nuestro comentario y ver los de los demás usuarios:<br><br>
+Podremos comentarla, (sabremos si un comentario ha sido editado y cuándo) editar nuestro comentario y ver los de los demás usuarios:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/9.png" title="Comentarios"><br><br>
 Desde nuestro perfil,desde la opción 'editar', podremos cambiar nuestra contraseña:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/10.png" title="Cambio de Password"><br><br>
