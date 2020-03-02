@@ -13,4 +13,4 @@ en formato JSON<br><br>
 
 <h2>Manual de uso:</h2>
 Para acceder a la aplicación necesitaremos registrarnos en ella para obtener uan cuenta de usuario.<br>
-![Screenshot](./capturas/1.png)<br>
+< img src="capturas/1.png" title="Registro"><br>
