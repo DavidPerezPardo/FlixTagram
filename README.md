@@ -18,7 +18,7 @@ Nos registramos y accedemos a ella a través del login.<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/2.png" title="Login"><br><br>
 Accederemos a la vista principal del usuario,dónde se mostrarán todas nuestras publicaciones,nuestro perfil y las distintas opciones del menú.<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/3.png" title="Publicaciones"><br><br>
-Podremos ver cuántas veces ha sido visitada nuestra publicación por el resto de usuarios:<br><br>
+Podremos ver cuántas veces ha sido visitada nuestra publicación o cualquiera otra por el resto de usuarios:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/4.png" title="Publicaciones"><br><br>
 Si le damos a la opción de 'explorar',podremos ver todas las publicaciones de los usuarios de FlixTagram<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/5.png" title="Explorar"><br><br>
