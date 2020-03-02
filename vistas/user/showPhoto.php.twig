@@ -1,0 +1,226 @@
+{% extends "plantillaBase.php.twig" %}
+
+{% block titulo %} Vista de usuario | publicación y comentarios{% endblock %}
+
+{% block contenido %}
+
+<script src="jquery/editCom.js"></script>
+
+<div class="container">
+
+
+  <!-- MENU -->
+  <nav class="row navbar navbar-light sticky-top justify-content-between border-bottom">
+    <a class="navbar-brand text-black" href="index.php">PicTravel</a>
+    <a href="index.php" class="text-dark"><i class="far fa-images"></i>Publicaciones</a>
+    <a href="index.php?con=Publicacion&ope=explorar&id={{id}}" class="text-dark"><i
+        class="fas fa-globe-europe"></i>Explorar</a>
+    <a href="index.php?con=Usuario&ope=cierraSesion" class="text-dark"><i class="fas fa-sign-out-alt"></i>Salir</a>
+  </nav>
+
+
+  {% for item in fotos %}
+
+  <!-- MEDIA OBJECT -->
+  <div class="media mt-4">
+    <img src="{{item.imgUser}}" class="mr-3 pic_mini rounded" alt="...">
+    <div class="media-body">
+      <h5 class="mt-0">{{item.nick}}</h5>
+      <small class="text-muted">Publicado el {{item.dateFoto}}</small>
+    </div>
+
+    {% if id == fotos.0.idUsu %}
+    <!-- BOTONES EDITAR Y BORRAR -->
+    <button class="btn btn-lg" data-toggle="modal" data-target="#modalPubliEdit">
+      <i class="fas fa-edit text-success"></i>
+    </button>
+
+    <button class="btn btn-lg" data-toggle="modal" data-target="#eliminar">
+      <i class="far fa-trash-alt text-danger"></i>
+    </button>
+
+    {% endif %}
+
+  </div>
+
+  <!-- CARD -->
+  <div class="card mt-3 border-0 style_coment">
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <img src="{{item.nameFoto}}" class="card-img" alt="foto de la publicación">
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <h5 class="card-title">{{item.place}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <!--FORM COMENTARIO-->
+          <form action="index.php" method="post">
+            <div class="col">
+              <div class="form-group">
+
+                <input type="hidden" name="con" value="Comentario">
+                <input type="hidden" name="ope" value="comentar">
+                <input type="hidden" name="idPub" value="{{item.idPub}}">
+
+                <i class="far fa-eye mb-4 mr-1"></i>{{item.shows}}
+                <textarea class="form-control" name="coment" rows="3" maxlength="150"
+                  placeholder="Añade un comentario..." required></textarea>
+              </div>
+              <input class="btn btn-sm btn-info" type="submit" value="Comentar">
+            </div>
+          </form>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </div><!-- FIN CARD -->
+
+
+  {% for item in comentarios %}
+
+  <div class="col-12 my-4 p-2 border-top w-100 ">
+
+    <div class="text-right ">
+
+
+      {% if id == item.idUsu %}
+      <!-- Muestra botón de editar si el comentario
+          es del usuario de la sesión.
+          Modal y formulario para editar. 
+        -->
+        <button type="button" name="modalCom" class="btn btn-light" data-text="{{item.textCom}}"
+                data-idcom="{{item.idCom}}">
+            <i class="fas fa-edit text-success" id="editCom"></i>
+        </button>
+
+      {% endif %}
+
+      {% if item.update_at %}
+
+      <small class="text-muted">Editado el {{item.update_at}}</small>
+
+      {% endif %}
+    </div>
+
+    <ul class="list-unstyled">
+      <li class="media">
+        <img src="{{item.imgUser}}" class="mr-3 pic_mini rounded" alt="...">
+        <div class="media-body">
+          <h5 class="mt-0 my-1">{{item.nick}}</h5>
+          <p>{{item.textCom}}</p>
+        </div>
+      </li>
+    </ul>
+    <div class="text-right ">
+      <small class="text-muted">Comentado el {{item.dateCom}}</small>
+    </div>
+
+  </div><!-- COL comentarios-->
+
+
+  <!--COMENTARIOS-->
+  {% endfor %}
+
+
+  {% if id == fotos.0.idUsu %}
+
+  <!-- MODAL EDITAR PUBLICACIÓN -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modalPubliEdit">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Editar publicación</h5>
+        </div>
+        <div class="modal-body">
+
+
+
+
+          <!-- Formulario para editar publicación -->
+          <form id="publiEdit" method="post" action="index.php">
+
+            <input type="hidden" name="con" value="Publicacion">
+            <input type="hidden" name="ope" value="editar">
+            <input type="hidden" name="id" value="{{fotos.0.idPub}}">
+
+            <div class="inputs">
+
+              <span>Lugar</span>
+              <input id="name" type="text" name="place" value="{{fotos.0.place}}" autofocus required>
+
+            </div>
+
+            <label class="text-info" for="description">Descripción</label>
+            <textarea class="mb-2 p-2" name="description" id="description" required>{{fotos.0.description}}</textarea>
+
+        </div> <!-- Modal body -->
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-info">Guardar cambios</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL CONFIR BORRADO -->
+  <div class="modal bd-example-modal-sm" id="eliminar">
+    <div class="modal-dialog modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <p>Está seguro/a de que desea eliminar la publicación?<p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-light" data-dismiss="modal">Cancelar</button>
+          <a href="index.php?con=Publicacion&ope=eliminar&id={{fotos.0.idPub}}"
+            class="btn btn-sm btn-warning">Aceptar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endif %}
+
+
+</div>
+<!--CONTAINER-->
+
+  <!-- MODAL EDITAR COMENTARIO -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="modalComEdit">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Editar Comentario</h5>
+          </div>
+          <div class="modal-body">
+  
+   
+            <!-- Formulario para editar comentario -->
+            <form action="index.php" method="POST" id="formEditCom">
+
+                <input type="hidden" name="con" value="Comentario">
+                <input type="hidden" name="ope" value="editCom">
+                <input type="hidden" name="idCom" value="">
+                <input type="hidden" name="idPub" value="{{fotos.0.idPub}}">              
+             
+                <textarea class="mb-2 p-2 w-100" name="com" id="comentEdit" maxlength="150" required></textarea>
+            </form>
+
+            </div> <!-- Modal body -->
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+            <button type="submit" form="formEditCom" id="saveEditCom" class="btn btn-info">Guardar cambios</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--FIN MODAL FORM EDITAR COMENTARIOS-->
+
+{% endblock %}

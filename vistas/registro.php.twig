@@ -1,0 +1,84 @@
+{% extends "plantillaBase.php.twig" %}
+
+{% block titulo %} Nuevo Registro {% endblock %}
+
+{% block contenido %}
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="jquery/validRegistro.js"></script>
+
+<div class="flex_container_reg">
+
+  <h1>Únete a FlixTagram!</h1>
+
+  <form id="registro" method="post" action="index.php">
+    {% if errorNick %}
+    <div class="alert alert-danger" role="alert">{{errorNick}}</div>
+    {% endif %}
+    <input type="hidden" name="con" value="Registro">
+    <input type="hidden" name="ope" value="registro">
+
+
+    <div class="inputs">
+
+      <span>Nombre</span>
+      <input id="name" type="text" name="name" autofocus>
+
+    </div>
+
+    <div class="inputs">
+
+      <span>Correo electrónico</span>
+      <input id="email" type="email" name="email">
+
+    </div>
+
+    <div class="inputs">
+
+      <span>Nombre de usuario</span>
+      <input id="nick" type="text" name="nick">
+
+    </div>
+
+    <div class="inputs">
+
+      <span>Contraseña</span>
+      <input id="pass" type="password" name="pass">
+
+    </div>
+
+    <div class="inputs">
+
+      <span>Confirmar contraseña</span>
+      <input id="confirmPass" type="password" name="confirmPass">
+
+    </div>
+
+    <div>
+
+      <input class="btn_reg" type="submit" value="Unirme" />
+      <p class="link_sesion">Ya tengo cuenta! <a href="index.php">Iniciar Sesión</a></p>
+
+    </div>
+
+
+  </form>
+
+  <footer class="bg-light p-2 w-100 d-flex justify-content-around">
+    <small>Curso 2018/2020 2º DAW - DWES</small>
+    <small>Desarrollado por: David Pérez Pardo S.L</small>
+
+    <div>
+      <p>
+        <a href="https://github.com/DavidPerezPardo" target="_blank" class="btn btn-lg btn-light text-dark">
+          <i class="fab fa-github"></i></a>
+        <i class="fas fa-envelope-open-text"></i> Perpar.david@gmail.com
+
+      </p>
+    </div>
+  </footer>
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "plantillaBase.php.twig" %}
+
+{% block titulo %} Login {% endblock %}
+
+{% block contenido %}
+
+<div class="flex_container">
+
+  <form id="login" method="post" action="index.php">
+    <h1 class="bg-light p-4 w-100 text-center rounded">FlixTagram</h1>
+
+    {% if errorLog %}
+    <div class="alert alert-danger" role="alert">{{errorLog}}</div>
+    {% elseif msnReg %}
+    <div class="alert alert-success" role="alert">{{msnReg}}</div>
+    {% endif %}
+
+    <input type="hidden" name="con" value="Usuario">
+    <input type="hidden" name="ope" value="existeUser">
+
+    <div class="inputs">
+
+      <span>Usuario</span>
+      <input id="user" type="text" name="user" autofocus required>
+
+    </div>
+
+    <div class="inputs">
+
+      <span>Contraseña</span>
+      <input id="pass" type="password" name="pass" required>
+
+    </div>
+
+    <div>
+
+      <input class="btn_log" type="submit" value="Iniciar sesión" />
+
+    </div>
+
+    <div class="links">
+
+      <a href="#">¿ Olvidé mi contraseña...?</a>
+      <div class="separador"></div>
+      <a href="index.php?con=Registro&ope=registro">Regístrate en picTravel</a>
+
+    </div>
+
+  </form>
+
+
+  <footer class="bg-light p-2 w-100 d-flex justify-content-around">
+    <small>Curso 2018/2020 2º DAW - DWES</small>
+    <small>Desarrollado por: David Pérez Pardo S.L</small>
+
+    <div>
+      <p>
+        <a href="https://github.com/DavidPerezPardo" target="_blank" class="btn btn-lg btn-light text-dark">
+          <i class="fab fa-github"></i></a>
+        <i class="fas fa-envelope-open-text"></i> Perpar.david@gmail.com
+
+      </p>
+    </div>
+  </footer>
+
+</div>
+
+{% endblock %}

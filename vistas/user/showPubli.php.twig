@@ -1,0 +1,331 @@
+{% extends "plantillaBase.php.twig" %}
+
+{% block titulo %} | Mis publicaciones | Perfil {% endblock %}
+
+{% block contenido %}
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="jquery/validEditForm.js"></script>
+
+<div class="container">
+
+
+  <!-- MENU -->
+  <nav class="row navbar navbar-light sticky-top border-bottom ">
+    <a class="navbar-brand text-black" href="index.php">PicTravel</a>
+    <a href="index.php?con=Publicacion&ope=explorar&id={{pubs.0.idUsu}}" class="text-dark"><i
+        class="fas fa-globe-europe"></i>Explorar</a>
+    <button class="btn" data-toggle="modal" data-target="#modalPubli">
+      <i class="fas fa-plus-circle text-info"></i>Publicar
+    </button>
+    <a href="index.php?con=Usuario&ope=cierraSesion" class="text-dark"><i class="fas fa-sign-out-alt"></i>Salir</a>
+  </nav>
+
+
+  <!-- ROW PERFIL -->
+  <div class="row py-4 border-bottom">
+
+    <!-- COL-PIC-PERFIL -->
+    <div class="col col-sm-4 mb-4 d-flex justify-content-center">
+
+      <div class="container_pic_perfil">
+        <img src="{{img}}" class="pic_perfil rounded-circle" alt="foto perfil">
+      </div>
+
+    </div>
+
+    <!-- COL-INFO-PERFIL -->
+    <div class="col col-sm-8">
+
+      <div class="d-flex justify-content-left">
+
+        <h3>{{nick}}</h3>
+
+        <div class="dropdown ml-1">
+          <button class="btn btn-light dropdown-toggle" type="button" id="editarMenu" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Perfil
+          </button>
+          <div class="dropdown-menu" aria-labelledby="editarMenu">
+            <a type="button" id="btnEdit" class="dropdown-item">Editar Perfil</a>
+            <a type="button" id="btnPass" class="dropdown-item">Cambiar contraseña</a>
+            <a type="button" id="btnEdit" data-toggle="modal" data-target="#modalApi" class="dropdown-item">Api</a>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="mt-4">{{nombre}}</h5>
+      <p>{{bio}}</p>
+
+      
+      <!-- MENSAJE SI HAY ERROR AL SUBIR FOTO -->
+      {% if errorImg == 1 %}
+      <div class="alert alert-danger" role="alert">
+          El tamaño de la imágen debe ser inferior a 8.3 MB
+        </div>
+      {% endif %}
+
+      {% if errorImg == 2%}
+      <div class="alert alert-danger" role="alert">
+        Formato de imágen no admitido, pruebe con otro.
+      {% endif %}
+
+
+      <!-- MENSAJE AL CAMBIAR CONTRASEÑA -->
+      {% if changePass == 1 %}
+
+      <div class="alert alert-success" role="alert">
+        Contraseña cambiada correctamente!
+      </div>
+      {% endif %}
+
+      {% if changePass == 0 %}
+
+      <div class="alert alert-danger" role="alert">
+        La contraseña introducida es incorrecta, el cambio
+        no se efectuó!
+      </div>
+
+      {% endif %}
+
+    </div><!-- COL-INFO PERFIL -->
+
+  </div><!-- ROW-PERFIL -->
+
+
+
+
+  <!--
+
+    CARDS CON LAS FOTOS
+
+  -->
+
+  <h5 class="py-3">Mis publicaciones</h5>
+  <div class="row">
+
+    {% for item in pubs %}
+
+    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+
+      <div class="card border-0 style_publi">
+        
+        <a href="index.php?con=Publicacion&ope=showPubli&id={{item.idPub}}">
+          <img src="{{item.nameFoto}}" class="card-img-top img-fluid " alt="...">
+        </a>
+        <div class="card-footer">
+          <small class="text-muted">{{item.datePub}}</small>
+          <i class="far fa-eye ml-4 mr-1"></i>{{item.shows}}
+
+        </div>
+      </div>
+
+    </div>
+
+    {% endfor %}
+  </div><!-- ROW CARDS-->
+
+
+</div><!-- CONTAINER -->
+
+
+<!-- MODAL PARA EDITAR PERFIL -->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalEdit">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar perfil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <!-- Formulario edicion de perfil -->
+        <form id="edit" method="post" action="index.php" enctype="multipart/form-data">
+
+          <input type="hidden" name="con" value="Usuario">
+          <input type="hidden" name="ope" value="editar">
+          <input type="hidden" name="img" value="{{img}}">
+
+          <div class="d-flex justify-content-center mb-3">
+            <img src="{{img}}" class="pic_perfil rounded-circle" alt="foto perfil">
+          </div>
+
+          <label class="btn btn-info" for="imgModal"> Cambiar foto de perfil</label>
+          <input class="btn mb-2" type="file" name="newImg" id="imgModal" style="display:none">
+
+          <div class="inputs">
+
+            <span>Nombre</span>
+            <input id="name" type="text" name="name" value="{{nombre}}" autofocus>
+
+          </div>
+
+          <label class="text-info" for="bio">Sobre mí</label>
+          <textarea class="mb-2 p-2" name="bio" id="bio">{{bio}}</textarea>
+
+          <div class="inputs">
+
+            <span>Correo electrónico</span>
+            <input id="email" type="email" name="email" value="{{email}}">
+
+          </div>
+
+          <div class="inputs">
+
+            <span>Nombre de usuario</span>
+            <input id="nick" type="text" name="nick" value="{{nick}}">
+
+          </div>
+
+      </div><!-- Modal body -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+        <button id="modalSave" class="btn btn-info">Guardar cambios</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- FIN MODAL EDITAR-->
+
+
+<!-- MODAL NUEVA PUBLICACIÓN -->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalPubli">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Nueva publicación</h5>
+      </div>
+      <div class="modal-body">
+
+
+        <!-- Formulario para publicar -->
+        <form id="publi" method="post" action="index.php" enctype="multipart/form-data">
+
+          <input type="hidden" name="con" value="Publicacion">
+          <input type="hidden" name="ope" value="publicar">
+
+          <label class="btn btn-info" for="imgP"> Añadir foto</label>
+          <input class="btn mb-2" type="file" accept="image/png, .jpeg, .jpg, .jpg, ,.gif" 
+            name="img" id="imgP"
+            style="display:none" required>
+
+          <div class="inputs">
+
+            <span>Lugar</span>
+            <input id="name" type="text" name="place" autofocus required>
+
+          </div>
+
+          <label class="text-info" for="description">Descripción</label>
+          <textarea class="mb-2 p-2" name="description" id="description"
+            placeholder="Escribe algo sobre el lugar..."></textarea>
+
+      </div> <!-- Modal body -->
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-info">Publicar</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL PARA CAMBIAR CONTRASEÑA -->
+<div class="modal fade" tabindex="-1" role="dialog" id="modalPass">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cambiar contraseña</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <!-- Formulario cambiar contraseña -->
+        <form id="changePass" method="post">
+
+          <input type="hidden" name="con" value="Registro">
+          <input type="hidden" name="ope" value="cambioPass">
+
+          <div class="inputs">
+
+            <span>Contraseña</span>
+            <input id="passOld" type="password" name="passOld">
+
+          </div>
+
+          <div class="inputs">
+
+            <span>Nueva contraseña</span>
+            <input id="passNew" type="password" name="passNew">
+
+          </div>
+
+          <div class="inputs">
+
+            <span>Repita contraseña</span>
+            <input type="password" name="confirmPass">
+
+          </div>
+
+      </div><!-- Modal body -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-dismiss="modal">Cerrar</button>
+        <button id="modalSave" class="btn btn-info">Guardar cambios</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!--MODAL API-->
+<div class="modal fade " tabindex="-1" role="dialog" id="modalApi">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">API FlixTagram</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <h5>Operaciones permitidas</h5>
+        <hr>
+        <p class="font-weight-bold">Obtener sus publicaciones = 'publicaciones'</p>
+
+        <p>http://api/infoGenerator.php?apiKey=<span class="text-danger">API Key</span>
+          &op=<span class="text-danger">Operación</span></span></p>
+
+        <p class="font-weight-bold">Obtener todos los comentarios de una publicación = 'comentarios'</p>
+
+        <p>http://api/infoGenerator.php?apiKey=<span class="text-danger">API KEY</span>
+          &op=<span class="text-danger">Operación</span>&id=<span class="text-danger">IDpublicación</span></p>
+        <hr>
+
+        {% if apiKey %}
+        <p>API Key: {{ apiKey }}</p>
+        {% else %}
+        <a href="index.php?con=Usuario&ope=generaKey">Obtener mi API Key</a>
+        {% endif %}
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

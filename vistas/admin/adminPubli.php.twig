@@ -1,0 +1,45 @@
+{% extends "plantillaBase.php.twig" %}
+
+{% block titulo %} Administrador | Publicaciones {% endblock %}
+
+{% block contenido %}
+
+<div class="container">
+
+  <!-- MENU -->
+  <nav class="row navbar navbar-light sticky-top justify-content-between border-bottom">
+    <a class="navbar-brand text-black" href="index.php">PicTravel<i class="fas fa-user-shield ml-1"></i>Panel</a>
+    <a href="index.php?con=Administrador&ope=showAll&modo=usuarios" class="text-dark"><i
+        class="far fa-images"></i>Usuarios</a>
+    <a href="index.php?con=Usuario&ope=cierraSesion" class="text-dark"><i class="fas fa-sign-out-alt"></i>Salir</a>
+  </nav>
+
+
+  <!--
+
+    CARDS CON LAS FOTOS
+
+  -->
+  <h5 class="py-3">Publicaciones usuario: {{pubs.0.nick}}</h5>
+  <div class="row">
+
+    {% for item in pubs %}
+
+    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+
+      <div class="card border-0 style_publi">
+        <a href="index.php?con=Administrador&ope=showAll&idPub={{item.idPub}}&idUsu={{item.idUsu}}&modo=comentarios">
+          <img src="{{item.nameFoto}}" class="card-img-top img-fluid " alt="...">
+        </a>
+        <div class="card-footer">
+          <small>{{item.datePub}} | Id publicación: {{item.idPub}}</small>
+        </div>
+      </div>
+
+    </div>
+
+    {% endfor %}
+  </div><!-- ROW CARDS-->
+
+
+  {% endblock %}

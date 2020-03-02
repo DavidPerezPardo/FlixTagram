@@ -1,0 +1,52 @@
+{% extends "plantillaBase.php.twig" %}
+
+{% block titulo %} | Mis publicaciones | Perfil {% endblock %}
+
+{% block contenido %}
+
+<div class="container">
+
+  <!-- MENU -->
+  <nav class="row navbar navbar-light sticky-top border-bottom ">
+    <a class="navbar-brand text-black" href="index.php">PicTravel</a>
+    <a href="index.php" class="text-dark"><i class="far fa-images"></i>Publicaciones</a>
+    <a href="index.php?con=Usuario&ope=cierraSesion" class="text-dark"><i class="fas fa-sign-out-alt"></i>Salir</a>
+  </nav>
+
+
+  <!--
+
+    CARDS CON LAS FOTOS
+
+  -->
+
+  <h5 class="py-3"><i class="fas fa-globe mr-1"></i>Explorando</h5>
+  <div class="row">
+
+    {% for item in pubs %}
+
+    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+      <div class="card style_publi border-0">
+          <p class="font-weight-bold">{{item.nick}}</p>
+
+        <a href="index.php?con=Publicacion&ope=showPubli&id={{item.idPub}}">
+          <img src="{{item.nameFoto}}" class="card-img-top img-fluid" alt="...">
+        </a>
+        <div class="card-footer">
+          <small class="text-muted">{{item.datePub}}</small>
+          <i class="far fa-eye ml-4 mr-1"></i>{{item.shows}}
+        </div>
+      </div>
+
+    </div>
+
+    {% endfor %}
+
+  </div><!-- ROW CARDS-->
+
+
+</div><!-- CONTAINER -->
+
+
+
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends "plantillaBase.php.twig" %}
+
+{% block titulo %} Administrador | Panel de control {% endblock %}
+
+{% block contenido %}
+
+<script src="jquery/filtraUsers.js"></script>
+
+<div class="container">
+
+  <!-- MENU -->
+  <nav class="row navbar navbar-light sticky-top d-flex justify-content-around">
+    <a class="navbar-brand text-black " href="index.php">PicTravel<i class="fas fa-user-shield ml-1 "></i>Panel</a>
+
+    <div class="row">
+
+      <div class="col-4">
+        <select class="custom-select" name="filter" id="filtro">
+          <option value="idUsu">ID</option>
+          <option value="nick">Nick</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
+      <div class="input-group col-8">
+        <div class="input-group-prepend">
+          <span class="input-group-text bg-light"><i class="fas fa-search"></i></span>
+        </div>
+        <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search..." autofocus aria-label="Search">
+      </div>
+    </div>
+    <a href="index.php?con=Usuario&ope=cierraSesion" class="text-dark"><i class="fas fa-sign-out-alt"></i>Salir</a>
+
+  </nav>
+
+
+
+  <table class="table table-sm  table-hover text-left">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Ops</th>
+        <th scope="col">Id</th>
+        <th scope="col">Img</th>
+        <th scope="col">Alta</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Nick</th>
+        <th scope="col">Email</th>
+        <th scope="col">Bio</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+
+      {% for item in usuarios %}
+
+      <tr>
+
+        <td>
+
+          <a href="index.php?con=Administrador&ope=showAll&modo=publicaciones&id={{item.idUsu}}"
+            class="btn btn-lg">
+            <i class="fas fa-eye"></i>
+          </a>
+
+          <!-- BOTON BORRAR -->
+          <a href="index.php?con=Administrador&ope=eliminar&idUsu={{item.idUsu}}"
+            onclick="return confirm('¿Está seguro de querer eliminar al usuario permanentemente?');" class="btn btn-lg">
+            <i class="far fa-trash-alt text-danger"></i>
+          </a>
+        </td>
+
+        <td>
+
+          {{item.idUsu}}
+
+        </td>
+        <td> <img src="{{item.imgUser}}" alt="" class="pic_mini"></td>
+        <td>{{item.altaUsu}}</td>
+        <td>{{item.nameUsu}}</td>
+        <td>{{item.nick}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.bioUser}}</td>
+
+      </tr>
+
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+</div>
+
+
+{% endblock %}
