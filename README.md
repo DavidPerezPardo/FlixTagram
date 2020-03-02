@@ -1,4 +1,4 @@
-# FlixTravel
+# FlixTagram
 Proyecto 2ª Evaluación PHP-MVC para desarrollo web en entorno servidor
 <h2>Descripción:</h2>
 La aplicación trata sobre una especie de blog dedicado principalmente a la fotografía, en el cuál los usuarios pueden registrarse en ella,tener su propio perfil y publicar sus imágenes para que puedan ser vistas por el resto de usuarios.
