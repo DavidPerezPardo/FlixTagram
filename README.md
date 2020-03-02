@@ -9,4 +9,4 @@ La API ofrece la posibilidad de:<br>
 - Obtener todas las publicaciones del usuario que lo solicita.<br>
 - Obtener todos los comentarios de una publicación suya.<br>
 en formato JSON<br><br>
-**Las instrucciones de uso las podemos encontrar en el propio perfil,junto a la API KEY generada.**
+<b>Las instrucciones de uso las podemos encontrar en el propio perfil,junto a la API KEY generada.</b>
