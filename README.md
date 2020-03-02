@@ -6,7 +6,7 @@ Los usuarios pueden ver y comentar cualquier publicación realizada,saber quien 
 Los usuarios disponen también de un modo 'explorar' para ver todas las publicaciónes del resto de usuarios.<br><br>
 FlixTagram dispone de una pequeña API de la que los usuarios pueden consumir,será necesaria una API KEY,la cuál puede generarse a traveś del propio perfil del usuario.<br>
 La API ofrece la posibilidad de:<br>
-- Obtener todas las publicaciones del usuario que lo solicita.
+- Obtener todas las publicaciones del usuario que lo solicita.<br>
 - Obtener todos los comentarios de una publicación suya.<br>
 en formato JSON<br>
 Las instrucciones de uso las podemos encontrar en el propio perfil,junto a la API KEY generada.
