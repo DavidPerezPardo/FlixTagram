@@ -42,7 +42,9 @@ Pulsando en el icono del 'ojo',podremos ver todas sus publicaciones y acceder a 
 También podrá borrar a cualquier usuario de la aplicación a través del icono 'papelera' que aparece justo debajo del 'ojo'.
 <br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/12.png" title="ADMIN filtro"><br><br>
-Una vez accedido a cualquier publicación,podremos verla completamente,como cualquiera otro usuario,pero pudiendo borrar dicha publiciación o cualquier comentario que aparezca.
+Una vez accedido a cualquier publicación,podremos verla completamente,como cualquiera otro usuario,pero pudiendo borrar dicha publicación o cualquier comentario que aparezca.<br><br>
+<img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/14.png" title="ADMIN publicación"><br>
+
 
 
 
