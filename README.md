@@ -8,5 +8,5 @@ FlixTagram dispone de una pequeña API de la que los usuarios pueden consumir,se
 La API ofrece la posibilidad de:<br>
 - Obtener todas las publicaciones del usuario que lo solicita.<br>
 - Obtener todos los comentarios de una publicación suya.<br>
-en formato JSON<br>
+en formato JSON<br><br>
 Las instrucciones de uso las podemos encontrar en el propio perfil,junto a la API KEY generada.
