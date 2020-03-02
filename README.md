@@ -16,4 +16,8 @@ Para acceder a la aplicación necesitaremos registrarnos en ella para obtener un
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/1.png" title="Registro"><br><br>
 Nos registramos y accedemos a ella a través del login.<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/2.png" title="Login"><br><br>
+Accederemos a la vista principal del usuario,dónde se mostrarán todas nuestras publicaciones,nuestro perfil y las distintas opciones del menú.<br><br>
+<img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/3.png" title="Publicaciones"><br><br>
+
+
 
