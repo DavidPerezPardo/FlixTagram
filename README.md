@@ -12,5 +12,5 @@ en formato JSON<br><br>
 <b>Las instrucciones de uso las podemos encontrar en el propio perfil,junto a la API KEY generada.</b>
 
 <h2>Manual de uso:</h2>
-Para acceder a la aplicación necesitaremos registrarnos en ella para obtener uan cuenta de usuario.
-(capturas/1.png)
+Para acceder a la aplicación necesitaremos registrarnos en ella para obtener uan cuenta de usuario.<br>
+![Screenshot](capturas/1.png)<br>
