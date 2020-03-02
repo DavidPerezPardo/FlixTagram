@@ -12,5 +12,8 @@ en formato JSON<br><br>
 <b>Las instrucciones de uso las podemos encontrar en el propio perfil,junto a la API KEY generada.</b>
 
 <h2>Manual de uso:</h2>
-Para acceder a la aplicación necesitaremos registrarnos en ella para obtener uan cuenta de usuario.<br>
-<img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/1.png" title="Registro"><br>
+Para acceder a la aplicación necesitaremos registrarnos en ella para obtener una cuenta de usuario.<br><br>
+<img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/1.png" title="Registro"><br><br>
+Nos registramos y accedemos a ella a través del login.<br><br>
+<img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/2.png" title="Login"><br><br>
+
