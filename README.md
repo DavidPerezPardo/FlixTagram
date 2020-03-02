@@ -10,3 +10,5 @@ La API ofrece la posibilidad de:<br>
 - Obtener todos los comentarios de una publicación suya.<br>
 en formato JSON<br><br>
 <b>Las instrucciones de uso las podemos encontrar en el propio perfil,junto a la API KEY generada.</b>
+
+<h2>Manual de uso:</h2>
