@@ -23,19 +23,26 @@ Si le damos a la opción de 'explorar',podremos ver todas las publicaciones de l
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/5.png" title="Explorar"><br><br>
 Si volvemos a 'nuestras publicaciones',podremos editar nuestro perfil de la siguiente manera:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/6.png" title="Perfil"><br><br>
-La opción 'publicar' nos permita añadir una publicación,tal y como se muestra en la imágen:<br><br>
+La opción 'publicar' nos permite añadir una publicación,tal y como se muestra en la imágen:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/7.png" title="Publicar"><br><br>
 Podremos,una vez dentro,editar nuestra publicación o borrarla.
 Y así veríamos una publicación,accediendo a ella clickando en la foto:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/8.png" title="Publicación"><br><br>
-Podremos comentarla,editar nuestro comentario y los de los demás usuarios:<br><br>
+Podremos comentarla,editar nuestro comentario y ver los de los demás usuarios:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/9.png" title="Comentarios"><br><br>
 Desde nuestro perfil,desde la opción 'editar', podremos cambiar nuestra contraseña:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/10.png" title="Cambio de Password"><br><br>
 También disponemos de la opción de generar nuestra API KEY,o en caso de haberla generado,de obtenerla:<br><br>
 <img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/11.png" title="API KEY"><br><br><br>
-Ahora pasamos al usuario 'ADMINISTRADOR',éste usuario podrá consultar todos los perfiles de a aplicación,pudiendo para ello utilizar distintos filtros de búsqueda:<br><br>
-<img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/12.png" title="ADMIN"><br><br>
+<h3>ADMINISTRADOR</H3><br><br>
+Ahora pasamos al usuario 'ADMINISTRADOR',éste usuario podrá consultar todos los perfiles de la aplicación,pudiendo para ello utilizar distintos filtros de búsqueda:<br><br>
+<img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/13.png" title="ADMIN"><br><br>
+Pulsando en el icono del 'ojo',podremos ver todas sus publicaciones y acceder a cada una de ellas.
+También podrá borrar a cualquier usuario de la aplicación a través del icono 'papelera' que aparece justo debajo del 'ojo'.
+<br><br>
+<img src="https://github.com/DavidPerezPardo/FlixTagram/blob/master/capturas/12.png" title="ADMIN filtro"><br><br>
+Una vez accedido a cualquier publicación,podremos verla completamente,como cualquiera otro usuario,pero pudiendo borrar dicha publiciación o cualquier comentario que aparezca.
+
 
 
 
