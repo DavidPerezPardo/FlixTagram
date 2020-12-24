@@ -1,6 +1,6 @@
 # FlixTagram
-<p>Author: David Pérez Pardo </p>
-<p>Curso: 2018/2020 - Desarrollo Web en entorno Servidor</p>
+**Desarrollo web en Entorno Servidor**<hr>
+**David Pérez Pardo - curso 2019/2020**<hr>
 Proyecto 2ª Evaluación PHP-MVC para desarrollo web en entorno servidor.
 <br>Se utiliza PHP cómo lenguaje en el backend, el motor de plantillas TWIG y Javascript (jQuery) para el frontend junto con Bootstrap, CSS3, HTML5.
 <h2>Descripción:</h2>
