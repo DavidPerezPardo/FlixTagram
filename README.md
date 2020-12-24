@@ -1,6 +1,6 @@
 # FlixTagram
 Proyecto 2ª Evaluación PHP-MVC para desarrollo web en entorno servidor.
-<br>Se utiliza PHP cómo lenguaje en el backend, el motor de plantillas TWIG y Javascript (jQuery) para el frontend junto con Boostrap, CSS3, HTML5.
+<br>Se utiliza PHP cómo lenguaje en el backend, el motor de plantillas TWIG y Javascript (jQuery) para el frontend junto con Bootstrap, CSS3, HTML5.
 <h2>Descripción:</h2>
 La aplicación web trata sobre una especie de blog dedicado principalmente a la fotografía, en el cuál los usuarios pueden registrarse en ella,tener su propio perfil y publicar sus imágenes para que puedan ser vistas por el resto de usuarios.
 Los usuarios pueden ver y comentar cualquier publicación realizada,saber quien creó tal publicación,editar un comentario propio,editar su perfil y cualquier publicación que le pertenezca.<br>
